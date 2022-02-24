@@ -1,0 +1,28 @@
+textarea {
+    height: 200px;
+    width: 400px;
+}
+p {
+    width: 40%;
+    background-color: white;
+    border: 2px solid hotpink;
+    padding: 10px;
+}
+body#introduction{
+    background-color:pink
+    
+}
+body#introduction > h1{
+    color: purple;
+    padding-left: 10px;
+}
+body#form{
+    background-color: honeydew;
+}
+input#submit{
+    background-color: lightblue;
+    width: 100px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
