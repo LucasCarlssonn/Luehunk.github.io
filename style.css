@@ -16,3 +16,9 @@ p#score{
     display: none
     
 }
+p.correct{
+    text-decoration: underline;
+}
+input#submit{
+    display: none;
+}

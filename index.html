@@ -21,6 +21,7 @@
         <small id="email_error"></small><br>
 
         <h1>Quiz:</h1><hr>
+        <h3>Question 1 (2 points):</h3>
         <label for="question1" class="label">Which countries were part of the axis powers in WW2?</label><br>
         <input type="checkbox" id="question1" name="question1" value="1">
         <label for="question1">Italy</label><br>
@@ -28,7 +29,9 @@
         <label for="question1">France</label><br>
         <input type="checkbox" id="question1" name="question1" value="3">
         <label for="question1">Germany</label><br>
-        <small id="question1_error"></small><hr>
+        <small id="question1_error"></small>
+        <p id="correct1" class="correct"></p><hr>
+        <h3>Question 2 (1 point):</h3>
         <label for="question2" class="label">In what year did WW2 start?</label><br>
         <input type="radio" id="question2" name="question2" value="1">
         <label for="question2">1939</label><br>
@@ -36,13 +39,16 @@
         <label for="question2">1914</label><br>
         <input type="radio" id="question2" name="question2" value="3">
         <label for="question2">1941</label><br>
-        <small id="question2_error"></small><hr>
+        <small id="question2_error"></small>
+        <p id="correct2" class="correct"></p><hr>
+        <h3>Question 3 (1 point):</h3>
         <label for="question3" class="label">What is the capital of France? </label><br>
         <input type="text" id="question3" name="question3"><br><br>
-        <small id="question3_error"></small><hr>
-        <input type="submit" id="submit">
-        <input type="button" onclick="window.location.reload();" value="Reset quiz"></input>
+        <small id="question3_error"></small>
+        <p id="correct3" class="correct"></p><hr>
         <input type="button" onclick="showResult()" value="Show result"></input>
+        <input type="button" onclick="window.location.reload();" value="Reset quiz"></input>
+        <input type="submit" id="submit">
       </form>
 
       <p id="score"></p>

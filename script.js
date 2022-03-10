@@ -91,6 +91,7 @@ function validate(skip) {
         if (/paris/i.test(text)){
             score += 1
         }
+    
         alert("Your score " + score + "/4 points was submitted");
     }
     return true;
@@ -137,4 +138,9 @@ function showResult(){
     }
     
     document.getElementById("question3").setAttribute("disabled", "true")
+
+    document.getElementById("correct1").innerHTML = "Correct answer is Italy and Germany."
+    document.getElementById("correct2").innerHTML = "Correct answer is 1939."
+    document.getElementById("correct3").innerHTML = "Correct answer is Paris."
+    document.getElementById("submit").style.display = "inline-block";
 }
