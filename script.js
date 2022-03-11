@@ -7,6 +7,12 @@ function validate(skip) {
     let fname = document.forms["myForm"]["fname"].value;
     let lname = document.forms["myForm"]["lname"].value;
     let email = document.forms["myForm"]["email"].value;
+    let radio = document.forms["myForm"]["question2"].value;
+    let text = document.forms["myForm"]["question3"].value;
+    let checkbox = [];
+    for (let i = 0; i < 3; i++){
+        checkbox.push(document.forms["myForm"]["question1"][i].checked)
+    }
 
     
     document.getElementById("fname_error").innerHTML = "";
