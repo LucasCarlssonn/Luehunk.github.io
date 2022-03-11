@@ -2,19 +2,12 @@
 function validate(skip) {
     const ERROR_STYLE = "border-color: red";
 
-    let score = 0;
     let valid = true;
 
     let fname = document.forms["myForm"]["fname"].value;
     let lname = document.forms["myForm"]["lname"].value;
     let email = document.forms["myForm"]["email"].value;
-    let radio = document.forms["myForm"]["question2"].value;
-    let text = document.forms["myForm"]["question3"].value;
-    let checkbox = [];
-    for (let i = 0; i < 3; i++){
-        checkbox.push(document.forms["myForm"]["question1"][i].checked);
 
-    };
     
     document.getElementById("fname_error").innerHTML = "";
     document.getElementById("lname_error").innerHTML = "";
@@ -76,52 +69,21 @@ function validate(skip) {
     if (!valid){
         return false;
     }
-    // check if this block of code should be skipped
+    
     if (!skip){
-        if (radio == 1){
-            score += 1;
-        }
-        
-        if (checkbox[0] && !checkbox[1] && checkbox[2]){
-            score += 2;
-        } else if ((checkbox[0] || checkbox[2]) && !checkbox[1]){
-            score += 1;
-        }
-    
-        if (/paris/i.test(text)){
-            score += 1
-        }
-    
+        let score = calculateScore();
         alert("Your score " + score + "/4 points was submitted");
     }
     return true;
 }
 
 function showResult(){
-    let score = 0;
-    let radio = document.forms["myForm"]["question2"].value;
-    let text = document.forms["myForm"]["question3"].value;
-    let checkbox = [];
-    for (let i = 0; i < 3; i++){
-        checkbox.push(document.forms["myForm"]["question1"][i].checked)
-    }
     const valid = validate(true);
     if (!valid){
         return
     }
-    if (radio == 1){
-        score += 1;
-    }
-        
-    if (checkbox[0] && !checkbox[1] && checkbox[2]){
-        score += 2;
-    } else if ((checkbox[0] || checkbox[2]) && !checkbox[1]){
-        score += 1;
-    }
-    
-    if (/^paris$/i.test(text)){
-        score += 1
-    }
+    let score = calculateScore();
+
     document.getElementById("score").innerHTML = "You scored " + score + "/4 points";
     document.getElementById("score").style.display = "block";
 
@@ -144,3 +106,28 @@ function showResult(){
     document.getElementById("correct3").innerHTML = "Correct answer is Paris."
     document.getElementById("submit").style.display = "inline-block";
 }
+
+function calculateScore(){
+    let score = 0;
+    let radio = document.forms["myForm"]["question2"].value;
+    let text = document.forms["myForm"]["question3"].value;
+    let checkbox = [];
+    for (let i = 0; i < 3; i++){
+        checkbox.push(document.forms["myForm"]["question1"][i].checked)
+    }
+    if (radio == 1){
+        score += 1;
+    }
+        
+    if (checkbox[0] && !checkbox[1] && checkbox[2]){
+        score += 2;
+    } else if ((checkbox[0] || checkbox[2]) && !checkbox[1]){
+        score += 1;
+    }
+    
+    if (/^paris$/i.test(text)){
+        score += 1
+    }
+    return score;
+
+};
