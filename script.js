@@ -43,7 +43,7 @@ function validate(skip) {
         document.getElementById("lname").style = ERROR_STYLE;
         valid = false;
     }
-    if (!(/^[a-ö]*$/i.test(lname))){
+    else if (!(/^[a-ö]*$/i.test(lname))){
         document.getElementById("lname_error").innerHTML = "Last name must only contain letters";
         document.getElementById("lname").style = ERROR_STYLE;
         valid = false;
@@ -53,7 +53,7 @@ function validate(skip) {
         document.getElementById("email").style = ERROR_STYLE;
         valid = false;
     }
-    if (!(/\S+[@]\S+[.]\S+/.test(email)) || email.includes(" ")){
+    else if (!(/\S+[@]\S+[.]\S+/.test(email)) || email.includes(" ")){
         document.getElementById("email_error").innerHTML = "Email must not contain spaces and follow the format xxxx@xxxx.xxx";
         document.getElementById("email").style = ERROR_STYLE;
         valid = false;
